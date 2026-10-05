@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
- 
+
 void main() {
   runApp(const MeuLayoutApp());
 }
- 
+
 class MeuLayoutApp extends StatelessWidget {
   const MeuLayoutApp({super.key});
- 
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,10 +20,10 @@ class MeuLayoutApp extends StatelessWidget {
     );
   }
 }
- 
+
 class TelaDashboard extends StatelessWidget {
   const TelaDashboard({super.key});
- 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +43,7 @@ class TelaDashboard extends StatelessWidget {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16.0),
- 
+
             // LINHA 1: Cards de estatisticas
             Row(
               children: [
@@ -103,13 +103,13 @@ class TelaDashboard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 24.0),
- 
+
             const Text(
               'Destaque da Semana',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16.0),
- 
+
             Stack(
               clipBehavior: Clip.none,
               children: [
@@ -150,10 +150,26 @@ class TelaDashboard extends StatelessWidget {
                     ),
                   ),
                 ),
+                // Exercicio 05: segundo selo no canto inferior esquerdo
+                Positioned(
+                  bottom: -8,
+                  left: -8,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Text(
+                      'Confirmado',
+                      style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 24.0),
- 
+
             // Exercicio 03: secao Ultimos Registros
             const Text(
               'Ultimos Registros',
